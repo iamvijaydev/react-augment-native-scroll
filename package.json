@@ -1,0 +1,40 @@
+{
+  "name": "react-augment-native-scroll",
+  "version": "0.1.0",
+  "description": "Augmenting native scroll for higher functionalities, React way.",
+  "main": "src/index.js",
+  "repository": "git@github.com:iamvijaydev/react-augment-native-scroll.git",
+  "author": "Vijay Dev <vijaydev.in@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "scroll",
+    "augment scroll",
+    "native scroll",
+    "connect scrolls",
+    "kinetic scroll",
+    "pull down refresh",
+    "pull up previous",
+    "react",
+    "hoc"
+  ],
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "prod": "cross-env NODE_ENV=production webpack",
+    "dist": "npm run clean && npm run prod",
+    "start": "cross-env NODE_ENV=development webpack-dev-server"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.1.8",
+    "cross-env": "^3.1.4",
+    "eslint": "^3.16.1",
+    "eslint-plugin-react": "^6.10.0",
+    "rimraf": "^2.6.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "dependencies": {
+    "react": "^15.4.2"
+  }
+}
