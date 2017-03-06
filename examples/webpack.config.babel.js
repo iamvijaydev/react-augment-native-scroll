@@ -8,7 +8,6 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'build/'),
     },
-    // target: 'node',
     devtool: 'cheap-module-source-map',
     module: {
         rules: [{

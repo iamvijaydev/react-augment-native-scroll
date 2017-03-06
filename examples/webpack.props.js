@@ -1,5 +1,5 @@
-const fs = require('fs')
-const webpack = require('webpack')
+import fs from 'fs'
+import webpack from 'webpack'
 let plugins
 
 if ( process.env.NODE_ENV === 'development' ) {
@@ -20,7 +20,7 @@ if ( process.env.NODE_ENV === 'development' ) {
             comments: false
         }),
         new webpack.BannerPlugin({
-            banner: `v${require('./package.json').version}\n\n${fs.readFileSync('./LICENSE', 'utf8')}`,
+            banner: `v${require('../package.json').version}\n\n${fs.readFileSync('./LICENSE', 'utf8')}`,
             raw: false,
             entryOnly: true
         })

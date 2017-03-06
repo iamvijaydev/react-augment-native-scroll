@@ -1,5 +1,5 @@
-const fs = require('fs')
-const webpack = require('webpack')
+import fs from 'fs'
+import webpack from 'webpack'
 
 let plugins;
 if ( process.env.NODE_ENV === 'development' ) {
