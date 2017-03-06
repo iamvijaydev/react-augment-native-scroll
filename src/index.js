@@ -1,2 +1,7 @@
-import defaults from './defaults'
-console.log(defaults);
+import ConnectScrolls from './ConnectScrolls';
+import KineticScroll from './KineticScroll';
+
+export default {
+    ConnectScrolls,
+    KineticScroll
+}
