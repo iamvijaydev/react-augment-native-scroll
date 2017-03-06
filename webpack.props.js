@@ -1,14 +1,13 @@
 const fs = require('fs')
 const webpack = require('webpack')
 
-let plugins = [];
-
+let plugins;
 if ( process.env.NODE_ENV === 'development' ) {
-    plugins.push(
+    plugins = [
         new webpack.HotModuleReplacementPlugin()
-    )
+    ]
 } else if ( process.env.NODE_ENV === 'production' ) {
-    plugins.push (
+    plugins = [
         new webpack.optimize.UglifyJsPlugin({
             beautify: false,
             mangle: {
@@ -19,18 +18,16 @@ if ( process.env.NODE_ENV === 'development' ) {
                 screw_ie8: true
             },
             comments: false
+        }),
+        new webpack.BannerPlugin({
+            banner: `v${require('./package.json').version}\n\n${fs.readFileSync('./LICENSE', 'utf8')}`,
+            raw: false,
+            entryOnly: true
         })
-    )
+    ]
 }
-plugins.push(
-    new webpack.BannerPlugin({
-        banner: `v${require('./package.json').version}\n\n${fs.readFileSync('./LICENSE', 'utf8')}`,
-        raw: false,
-        entryOnly: true
-    })
-)
 
 let min = process.env.NODE_ENV === 'production' ? '.min' : '';
-let fileName = `react-augment-native-scroll${min}.js`;
+let filename = `react-augment-native-scroll${min}.js`;
 
-export default { plugins, fileName }
+export { plugins, filename };

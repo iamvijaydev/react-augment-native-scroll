@@ -1,11 +1,10 @@
 import path from 'path'
-import { plugins, fileName } from './webpack.props'
-
+import { plugins, filename } from './webpack.props'
 
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: fileName,
+        filename: filename,
         path: path.resolve(__dirname, 'dist'),
         library: 'react-augment-native-scroll',
         libraryTarget: 'umd'
