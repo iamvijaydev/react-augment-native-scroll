@@ -1,0 +1,50 @@
+@import './variables.scss';
+
+.table-wrap {
+    position: absolute;
+    left: 150px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    &--alone {
+        left: 0;
+    }
+
+    &__table {
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    &__tr {
+        height: 30px;
+    }
+
+    &__td {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 14px;
+        border-collapse: collapse;
+        border: 1px solid $list-border;
+        border-width: 0 1px 1px 0;
+        padding: 0 10px;
+        text-align: center;
+
+        &--head {
+            background: $section-header;
+            color: $white;
+            font-weight: bold;
+            border: 1px solid rgba(0,0,0,.1);
+        }
+
+        &--strong {
+            color: rgba(0,0,0,.7);
+            font-weight: bold;
+        }
+
+        &--normal {
+            font-style: italic;
+        }
+    }
+}

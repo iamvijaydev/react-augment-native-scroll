@@ -1,0 +1,81 @@
+.interact {
+    z-index: 1000;
+    position: absolute;
+    right: -201px;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background: $interact-bg;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+
+    &--open {
+        right: 0;
+    }
+
+    &__toggle {
+        width: 44px;
+        height: 40px;
+        position: absolute;
+        top: 40px;
+        left: -40px;
+        background: $interact-bg;
+        font-size: 30px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 3px 0 0 3px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        color: $interact-toggle;
+    }
+
+    &__list {
+        list-style: none;
+        height: 100%;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    &__item {
+        margin: 20px;
+        padding-bottom: 20px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #dad7cb;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #3b3f43;
+        text-align: center;
+    }
+
+    &__button {
+        border: none;
+        background: #ad32ff;
+        color: #fff;
+        cursor: pointer;
+        padding: 10px 0;
+    }
+
+    &__input {
+        color: #970ff1;
+        margin-bottom: 10px;
+        border: 1px solid #bbb1c1;
+        padding: 10px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.3) inset;
+    }
+}
+
+.form-item {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    outline: none;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 3px;
+}
