@@ -13,9 +13,15 @@ module.exports = {
         rules: [{
             test: /\.js$/,
             use: 'babel-loader'
+        }, {
+            test: /\.scss$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                'sass-loader'
+            ]
         }]
     },
-    stats: 'verbose',
     devServer: {
         contentBase: path.join(__dirname, '../'),
         publicPath: '/examples/build/',

@@ -7,11 +7,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>
-                <header>This is header</header>
-                <main>{this.props.children}</main>
-                <footer>This is footer</footer>
-            </div>
+            <div>{this.props.children}</div>
         )
     }
 }

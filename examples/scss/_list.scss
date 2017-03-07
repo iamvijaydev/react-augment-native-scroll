@@ -1,0 +1,42 @@
+@import './variables.scss';
+
+.list {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    box-shadow: 2px -5px 5px rgba(0,0,0,.15);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.list__item {
+    font-size: 14px;
+    line-height: 29px;
+    padding: 0 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.5);
+
+    &:not(:last-child) {
+        border-bottom: 1px solid $list-border;
+    }
+
+    &--strong {
+        color: rgba(0, 0, 0, .7);
+        font-weight: bold;
+    }
+
+    &--head {
+        background: $section-header;
+        color: $white;
+        font-weight: bold;
+    }
+
+    &--normal {
+        font-style: italic;
+    }
+}

@@ -7,6 +7,8 @@ import Home from './components/Home'
 import ConnectScrollsExample from './components/ConnectScrollsExample'
 import KineticScrollExample from './components/KineticScrollExample'
 
+require('./scss/styles.scss');
+
 render(
     (
         <Router history={hashHistory}>
