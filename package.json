@@ -22,8 +22,10 @@
     "compile": "cross-env NODE_ENV=production webpack",
     "dist": "npm run clean && npm run compile",
     "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "eg-dev": "cross-env NODE_ENV=development webpack-dev-server --config examples/webpack.config.babel.js",
-    "eg-build": "cross-env NODE_ENV=production webpack --config examples/webpack.config.babel.js"
+    "eg-clean": "rimraf examples/build/*",
+    "eg-compile": "cross-env NODE_ENV=production webpack --config examples/webpack.config.babel.js",
+    "eg-build": "npm run eg-clean && npm run eg-compile",
+    "eg-dev": "cross-env NODE_ENV=development webpack-dev-server --config examples/webpack.config.babel.js"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
