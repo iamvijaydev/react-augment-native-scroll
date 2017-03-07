@@ -1,18 +1,21 @@
 import path from 'path'
-import plugins from './webpack.props'
+import { plugins, filename } from './webpack.props'
 
 module.exports = {
     context: path.resolve(__dirname, './'),
-    entry: './index.js',
+    entry: [
+        'webpack-hot-middleware/client',
+        './index.js'
+    ],
     output: {
-        filename: 'bundle.js',
+        filename: filename,
         path: path.resolve(__dirname, 'build/'),
     },
     devtool: 'cheap-module-source-map',
     module: {
         rules: [{
             test: /\.js$/,
-            use: 'babel-loader'
+            use: ['react-hot-loader', 'babel-loader']
         }, {
             test: /\.scss$/,
             use: [
@@ -21,15 +24,6 @@ module.exports = {
                 'sass-loader'
             ]
         }]
-    },
-    devServer: {
-        contentBase: path.join(__dirname, '../'),
-        publicPath: '/examples/build/',
-        hot: true,
-        inline: true,
-        compress: true,
-        port: 3000,
-        historyApiFallback: true
     },
     plugins: plugins
 };
