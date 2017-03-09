@@ -16,10 +16,6 @@ export default class ConnectScrollsExample extends Component {
         this.setState({
             scrollInst: scrollInst
         });
-
-        setTimeout(() => {
-            this.state.scrollInst.scrollToEnd();
-        }, 2000)
     }
 
     generateState() {
