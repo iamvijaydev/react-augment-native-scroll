@@ -5,9 +5,9 @@
     top: 0;
     bottom: 0;
     width: 200px;
-    background: $interact-bg;
+    background: $white;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 
     &--open {
         right: 0;
@@ -19,14 +19,14 @@
         position: absolute;
         top: 40px;
         left: -40px;
-        background: $interact-bg;
+        background: $white;
         font-size: 30px;
         line-height: 40px;
         text-align: center;
         border-radius: 3px 0 0 3px;
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
         cursor: pointer;
-        color: $interact-toggle;
+        color: $interact__click;
     }
 
     &__list {
@@ -41,7 +41,7 @@
         padding-bottom: 20px;
 
         &:not(:last-child) {
-            border-bottom: 1px solid #dad7cb;
+            border-bottom: 1px solid $list-border;
         }
     }
 
@@ -53,19 +53,33 @@
     }
 
     &__button {
-        border: none;
-        background: #ad32ff;
-        color: #fff;
+        border: 1px solid $interact__click;
+        background: $white;
+        color: $interact__click;
         cursor: pointer;
         padding: 10px 0;
+
+        &:hover {
+            background: $interact__click;
+            color: $white;
+        }
+
+        &:active {
+            background: $interact__click--active;
+            border-color: $interact__click--active;
+            color: $white;
+        }
     }
 
     &__input {
-        color: #970ff1;
+        color: $interact__input-color;
         margin-bottom: 10px;
-        border: 1px solid #bbb1c1;
+        border: 1px solid $interact__input-border;
         padding: 10px;
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.3) inset;
+
+        &:focus {
+            border-color: $interact__input-border--focus;
+        }
     }
 }
 
@@ -73,9 +87,11 @@
     display: block;
     width: 100%;
     font-size: 14px;
+    font-weight: 800;
     outline: none;
     text-transform: uppercase;
     box-sizing: border-box;
     font-family: 'Roboto Condensed', sans-serif;
     border-radius: 3px;
+    transition: all 0.1s ease;
 }

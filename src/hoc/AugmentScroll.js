@@ -1,8 +1,8 @@
 import React, { Component, Children, PropTypes } from 'react'
-import { getTime, getPoint, preventDefaultException, getMaxScroll } from './utils'
-import defaultSettings from './defaultSettings'
+import { getTime, getPoint, preventDefaultException, getMaxScroll } from '../mics/utils'
+import defaultSettings from '../mics/defaultSettings'
 
-export default function Kinetics (eventHandlers = []) {
+export default function AugmentScroll (eventHandlers = []) {
     class AugmentedScroll extends Component {
         constructor(props) {
             super(props);
@@ -196,6 +196,10 @@ export default function Kinetics (eventHandlers = []) {
         setScroll(left, top) {
             let correctedLeft = Math.round(left);
             let correctedTop = Math.round(top);
+
+            if ( ! this.childNodes ) {
+                return;
+            }
 
             this.childNodes.forEach(node => {
                 let $el = node.children[0];

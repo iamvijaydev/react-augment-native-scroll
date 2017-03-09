@@ -1,23 +1,20 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router'
+import React from 'react'
+import { render } from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
 
-import App from './components/App'
-import Home from './components/Home'
-import ConnectScrollsExample from './components/ConnectScrollsExample'
-import KineticScrollExample from './components/KineticScrollExample'
+import Root from './components/Root'
 
-require('./scss/styles.scss');
+const draw = Component => {
+    render(
+        <AppContainer>
+            <Component />
+        </AppContainer>,
+        document.getElementById('root')
+    )
+}
 
-render(
-    (
-        <Router history={hashHistory}>
-            <Route path="/" component={App}>
-                <IndexRoute component={Home} />
-                <Route path="connect-scrolls" component={ConnectScrollsExample} />
-                <Route path="kinetic-scroll" component={KineticScrollExample} />
-            </Route>
-        </Router>
-    ),
-    document.querySelector('#root')
-)
+draw(Root)
+
+if (module.hot) {
+    module.hot.accept('./components/Root', () => { draw(Root) })
+}
