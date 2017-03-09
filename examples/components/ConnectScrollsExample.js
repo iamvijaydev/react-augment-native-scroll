@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import ConnectScrolls from '../../src/ConnectScrolls';
+import ConnectScrolls from '../../src/components/ConnectScrolls';
 import InteractMethods from './InteractMethods';
 
 export default class ConnectScrollsExample extends Component {

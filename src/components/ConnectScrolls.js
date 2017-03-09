@@ -1,5 +1,5 @@
-import { findMatchingTarget } from './utils'
-import ApplyKinetics from './ApplyKinetics'
+import { findMatchingTarget } from '../mics/utils'
+import AugmentScroll from '../hoc/AugmentScroll'
 
 const eventHandlers = [{
     event: 'ontouchstart' in window ? 'touchstart' : 'mouseover',
@@ -43,6 +43,4 @@ const eventHandlers = [{
     }
 }];
 
-const ConnectedScroll = ApplyKinetics(eventHandlers);
-
-export default ConnectedScroll;
+export default AugmentScroll(eventHandlers);

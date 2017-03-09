@@ -1,8 +1,8 @@
 import React, { Component, Children, PropTypes } from 'react'
-import { getTime, getPoint, preventDefaultException, getMaxScroll } from './utils'
-import defaultSettings from './defaultSettings'
+import { getTime, getPoint, preventDefaultException, getMaxScroll } from '../mics/utils'
+import defaultSettings from '../mics/defaultSettings'
 
-export default function Kinetics (eventHandlers = []) {
+export default function AugmentScroll (eventHandlers = []) {
     class AugmentedScroll extends Component {
         constructor(props) {
             super(props);

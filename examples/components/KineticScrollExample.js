@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import KineticScroll from '../../src/KineticScroll';
+import KineticScroll from '../../src/components/KineticScroll';
 import InteractMethods from './InteractMethods';
 
 export default class KineticScrollExample extends Component {
