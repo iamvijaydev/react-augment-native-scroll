@@ -197,6 +197,10 @@ export default function Kinetics (eventHandlers = []) {
             let correctedLeft = Math.round(left);
             let correctedTop = Math.round(top);
 
+            if ( ! this.childNodes ) {
+                return;
+            }
+
             this.childNodes.forEach(node => {
                 let $el = node.children[0];
                 let maxScrollX = $el.scrollWidth - $el.clientWidth;
