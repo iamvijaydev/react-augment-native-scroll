@@ -196,23 +196,21 @@ export default function AugmentScroll (eventHandlers = []) {
         setScroll(left, top) {
             let correctedLeft = Math.round(left);
             let correctedTop = Math.round(top);
-
-            if ( ! this.childNodes ) {
-                return;
-            }
-
+            
             this.childNodes.forEach(node => {
-                let $el = node.children[0];
-                let maxScrollX = $el.scrollWidth - $el.clientWidth;
-                let maxScrollY = $el.scrollHeight - $el.clientHeight;
+                if ( node ) {
+                    let $el = node.children[0];
+                    let maxScrollX = $el.scrollWidth - $el.clientWidth;
+                    let maxScrollY = $el.scrollHeight - $el.clientHeight;
 
-                if ( maxScrollX > 0 && correctedLeft >= 0 && correctedLeft <= maxScrollX ) {
-                    $el.scrollLeft = correctedLeft;
-                    this.scrollLeft = correctedLeft;
-                }
-                if ( maxScrollY > 0 && correctedTop >= 0 && correctedTop <= maxScrollY ) {
-                    $el.scrollTop = correctedTop;
-                    this.scrollTop = correctedTop;
+                    if ( maxScrollX > 0 && correctedLeft >= 0 && correctedLeft <= maxScrollX ) {
+                        $el.scrollLeft = correctedLeft;
+                        this.scrollLeft = correctedLeft;
+                    }
+                    if ( maxScrollY > 0 && correctedTop >= 0 && correctedTop <= maxScrollY ) {
+                        $el.scrollTop = correctedTop;
+                        this.scrollTop = correctedTop;
+                    }
                 }
             })
         }
