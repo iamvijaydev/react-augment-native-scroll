@@ -1,0 +1,3 @@
+dist/*
+examples/build/*
+__test__/*

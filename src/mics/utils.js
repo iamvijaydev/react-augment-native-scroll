@@ -2,16 +2,14 @@ export function fixRequestAnimationFrame () {
 
 }
 
-export function findMatchingTarget (target, nodes) {
+export function findMatchingTarget (target = {}, nodes = []) {
     let found;
 
     if ( ! nodes.length || target.tagName === 'BODY' ) {
         return 'BODY';
     }
 
-    found = nodes.find(function (node) {
-        return node.id === target.id
-    });
+    found = nodes.find(node => node.id === target.id);
 
     if ( found ) {
         return target.id;
